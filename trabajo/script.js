@@ -1,31 +1,29 @@
-// CARRITO
-
-let carrito = [];
+let carrito = 0;
 
 const botones = document.querySelectorAll(".add-cart");
 const contador = document.getElementById("cart-count");
 
-botones.forEach((boton)=>{
+botones.forEach(boton => {
 
-boton.addEventListener("click",()=>{
+boton.addEventListener("click", () => {
 
-const nombre = boton.dataset.name;
+carrito++;
 
-carrito.push(nombre);
+contador.textContent = carrito;
 
-contador.textContent = carrito.length;
+boton.innerText = "✓ Agregado";
 
-alert(nombre + " agregado al carrito");
+setTimeout(() => {
+boton.innerText = "Agregar";
+},1500);
 
 });
 
 });
-
-// NEWSLETTER
 
 const form = document.getElementById("newsletter-form");
 
-form.addEventListener("submit",(e)=>{
+form.addEventListener("submit", e => {
 
 e.preventDefault();
 
@@ -38,32 +36,8 @@ return;
 
 }
 
-alert("¡Gracias por suscribirte!");
+alert("¡Bienvenida a Velvet Circle! ✨");
 
 form.reset();
-
-});
-
-// ANIMACIONES
-
-const elementos = document.querySelectorAll(".card, .product");
-
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-elementos.forEach((el)=>{
-
-observer.observe(el);
 
 });
