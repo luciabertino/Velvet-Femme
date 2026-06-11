@@ -1,185 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Velvet Femme</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Velvet Femme</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div class="topbar">
-    Envío gratis en compras sobre $60.000 ♡
-</div>
+    <!-- BARRA SUPERIOR -->
 
-<header>
+    <div class="top-bar">
 
-    <div class="header-icons">
-        🔍
-    </div>
-
-    <div class="logo">
-        <div class="butterfly">🦋</div>
-
-        <h1>VELVET FEMME</h1>
-
-        <span>BOUTIQUE & LINGERIE</span>
-    </div>
-
-    <div class="header-icons">
-        👤 🛍️ <span id="cart-count">0</span>
-    </div>
-
-</header>
-
-<nav>
-    <a href="#">HOME</a>
-    <a href="#">SHOP</a>
-    <a href="#">LINGERIE</a>
-    <a href="#">SLEEPWEAR</a>
-    <a href="#">ESSENTIALS</a>
-    <a href="#">NEW IN</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
-</nav>
-
-<section class="hero">
-
-    <div class="hero-image"></div>
-
-    <div class="hero-content">
-
-        <p class="muse">be your own muse</p>
-
-        <h2>
-            ELEGANCE <br>
-            IN EVERY DETAIL
-        </h2>
-
-        <p>
-            Lencería y ropa diseñada para resaltar
-            tu feminidad con suavidad y confianza.
-        </p>
-
-        <button>SHOP NOW</button>
+        <p>Envío gratis en compras superiores a $60.000 ♡</p>
 
     </div>
 
-</section>
+    <!-- HEADER -->
 
-<section class="categories">
+    <header>
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=600">
-<h3>LINGERIE</h3>
-<p>Ver colección</p>
-</div>
+        <div class="header-left">
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1618244972963-dbad68f7d6c3?w=600">
-<h3>SLEEPWEAR</h3>
-<p>Ver colección</p>
-</div>
+            <button class="icon-btn">
+                🔍
+            </button>
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600">
-<h3>ESSENTIALS</h3>
-<p>Ver colección</p>
-</div>
+        </div>
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600">
-<h3>NEW IN</h3>
-<p>Ver colección</p>
-</div>
+        <div class="logo-container">
 
-</section>
+            <!-- CAMBIA EL NOMBRE DEL ARCHIVO POR TU LOGO -->
 
-<section class="best-sellers">
+            <img src="images/logo.png" alt="Velvet Femme Logo" class="logo">
 
-<div class="best-title">
+        </div>
 
-<span>Our favorites ✧</span>
+        <div class="header-right">
 
-<h2>BEST SELLERS</h2>
+            <button class="icon-btn">
+                👤
+            </button>
 
-<p>
-Las piezas más amadas por nuestra comunidad.
-</p>
+            <button class="icon-btn cart-btn">
 
-<button>SHOP BEST SELLERS</button>
+                🛍️
 
-</div>
+                <span id="cart-count">0</span>
 
-<div class="products">
+            </button>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=600">
-<h4>Velvet Lace Set</h4>
-<p>$34.990</p>
-<button class="add-cart">Agregar</button>
-</div>
+        </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1618244972963-dbad68f7d6c3?w=600">
-<h4>Soft Satin Set</h4>
-<p>$29.990</p>
-<button class="add-cart">Agregar</button>
-</div>
+    </header>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600">
-<h4>Nude Essentials</h4>
-<p>$19.990</p>
-<button class="add-cart">Agregar</button>
-</div>
+    <!-- MENÚ -->
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600">
-<h4>Black Lace Set</h4>
-<p>$34.990</p>
-<button class="add-cart">Agregar</button>
-</div>
+    <nav class="navbar">
 
-</div>
+        <ul>
 
-</section>
+            <li><a href="#">HOME</a></li>
 
-<section class="newsletter">
+            <li><a href="#">SHOP</a></li>
 
-<h2>Join the Velvet Circle</h2>
+            <li><a href="#">LINGERIE</a></li>
 
-<p>
-Suscríbete y recibe novedades, descuentos
-y lanzamientos exclusivos.
-</p>
+            <li><a href="#">SLEEPWEAR</a></li>
 
-<form id="newsletter-form">
-<input type="email" id="email" placeholder="Tu correo electrónico">
-<button>Suscribirme</button>
-</form>
+            <li><a href="#">ESSENTIALS</a></li>
 
-</section>
+            <li><a href="#">NEW IN</a></li>
 
-<footer>
+            <li><a href="#">ABOUT</a></li>
 
-<div class="footer-logo">
-VELVET FEMME
-</div>
+            <li><a href="#">CONTACT</a></li>
 
-<p>
-© 2025 Velvet Femme. Todos los derechos reservados.
-</p>
+        </ul>
 
-</footer>
+    </nav>
 
-<script src="script.js"></script>
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-image">
+
+            <!-- Hero principal -->
+
+            <img src="images/hero.jpg" alt="Hero Image">
+
+        </div>
+
+        <div class="hero-content">
+
+            <span class="hero-subtitle">
+                be your own muse
+            </span>
+
+            <h1>
+
+                ELEGANCE <br>
+                IN EVERY DETAIL
+
+            </h1>
+
+            <p>
+
+                Lencería y ropa diseñada para resaltar tu feminidad
+                con suavidad, comodidad y elegancia.
+
+            </p>
+
+            <button class="main-button">
+
+                SHOP NOW
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORÍAS -->
+
+    <section class="categories">
+
+        <div class="section-title">
+
+            <h2>SHOP BY CATEGORY</h2>
+
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <img src="images/cat1.jpg" alt="">
+
+                <h3>LINGERIE</h3>
+
+                <a href="#">Ver colección</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="images/cat2.jpg" alt="">
+
+                <h3>SLEEPWEAR</h3>
+
+                <a href="#">Ver colección</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="images/cat3.jpg" alt="">
+
+                <h3>ESSENTIALS</h3>
+
+                <a href="#">Ver colección</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="images/cat4.jpg" alt="">
+
+                <h3>NEW IN</h3>
+
+                <a href="#">Ver colección</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BEST SELLERS -->
+
+    <section class="best-sellers">
+
+        <div class="best-info">
+
+            <span>Our Favorites ✧</span>
+
+            <h2>BEST SELLERS</h2>
+
+            <p>
+
+                Las piezas favoritas de nuestra comunidad.
+
+            </p>
+
+            <button class="main-button">
+
+                SHOP BEST SELLERS
+
+            </button>
+
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+
+                <img src="images/product1.jpg" alt="">
+
+                <h4>Velvet Lace Set</h4>
+
+                <p>$34.990</p>
+
+                <button class="add-cart">
+
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/product2.jpg" alt="">
+
+                <h4>Soft Satin Set</h4>
+
+                <p>$29.990</p>
+
+                <button class="add-cart">
+
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/product3.jpg" alt="">
+
+                <h4>Nude Essentials</h4>
+
+                <p>$19.990</p>
+
+                <button class="add-cart">
+
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/product4.jpg" alt="">
+
+                <h4>Black Lace Set</h4>
+
+                <p>$34.990</p>
+
+                <button class="add-cart">
+
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+        <div class="newsletter-image">
+
+            <img src="images/newsletter.jpg" alt="">
+
+        </div>
+
+        <div class="newsletter-content">
+
+            <h2>
+
+                Join the Velvet Circle
+
+            </h2>
+
+            <p>
+
+                Suscríbete para recibir novedades,
+                descuentos exclusivos y lanzamientos.
+
+            </p>
+
+            <form id="newsletter-form">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Tu correo electrónico">
+
+                <button type="submit">
+
+                    SUSCRIBIRME
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <img src="images/logo.png" alt="">
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>SHOP</h4>
+
+                <a href="#">Lingerie</a>
+                <a href="#">Sleepwear</a>
+                <a href="#">Essentials</a>
+                <a href="#">New In</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>INFORMATION</h4>
+
+                <a href="#">About</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>FOLLOW US</h4>
+
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">Pinterest</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2025 Velvet Femme - Todos los derechos reservados
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
