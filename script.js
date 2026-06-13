@@ -53,36 +53,6 @@ document.querySelectorAll(
 });
 
 
-// ==========================
-// NEWSLETTER
-// ==========================
-
-const subscribeBtn =
-document.querySelector(".newsletter-form button");
-
-if(subscribeBtn){
-
-    subscribeBtn.addEventListener("click",()=>{
-
-        const email =
-        document.querySelector(".newsletter-form input");
-
-        if(email.value.trim() === ""){
-
-            alert("Ingresa tu correo electrónico");
-
-            return;
-
-        }
-
-        alert("¡Gracias por suscribirte! 💕");
-
-        email.value = "";
-
-    });
-
-}
-
 
 // ==========================
 // BOTÓN SUBIR
@@ -175,6 +145,26 @@ if(heroButton){
     });
 
 }
+
+
+
+const botones = document.querySelectorAll(".btn-consultar");
+
+botones.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const producto =
+            btn.parentElement.querySelector("h3").textContent;
+
+        const mensaje =
+            `Hola, me interesa el producto: ${producto}`;
+
+        window.open(
+            `https://wa.me/56912345678?text=${encodeURIComponent(mensaje)}`,
+            "_blank"
+        );
+    });
+});
 
 
 // ==========================
