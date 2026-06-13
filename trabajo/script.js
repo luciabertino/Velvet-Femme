@@ -1,25 +1,20 @@
-// =========================
-// SCROLL HEADER
-// =========================
+// ==========================
+// HEADER SCROLL
+// ==========================
 
 window.addEventListener("scroll", () => {
 
     const header = document.querySelector("header");
 
-    if (window.scrollY > 50) {
+    if(window.scrollY > 50){
 
-        header.style.position = "fixed";
+        header.style.position = "sticky";
         header.style.top = "0";
-        header.style.left = "0";
-        header.style.width = "100%";
-        header.style.zIndex = "999";
-        header.style.background = "rgba(255,255,255,0.95)";
-        header.style.backdropFilter = "blur(10px)";
-        header.style.boxShadow = "0 2px 15px rgba(0,0,0,.08)";
+        header.style.zIndex = "1000";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.08)";
 
-    } else {
+    }else{
 
-        header.style.position = "relative";
         header.style.boxShadow = "none";
 
     }
@@ -27,13 +22,13 @@ window.addEventListener("scroll", () => {
 });
 
 
-// =========================
-// FADE IN ELEMENTS
-// =========================
+// ==========================
+// SCROLL ANIMATION
+// ==========================
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry => {
+    entries.forEach(entry=>{
 
         if(entry.isIntersecting){
 
@@ -44,7 +39,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 
 },{
-    threshold:0.15
+    threshold:0.2
 });
 
 document.querySelectorAll(
@@ -52,52 +47,83 @@ document.querySelectorAll(
 ).forEach(el=>{
 
     el.classList.add("hidden");
+
     observer.observe(el);
 
 });
 
 
-// =========================
-// BACK TO TOP BUTTON
-// =========================
+// ==========================
+// NEWSLETTER
+// ==========================
 
-const topBtn = document.createElement("button");
+const subscribeBtn =
+document.querySelector(".newsletter-form button");
 
-topBtn.innerHTML = "↑";
+if(subscribeBtn){
 
-topBtn.id = "topBtn";
+    subscribeBtn.addEventListener("click",()=>{
 
-document.body.appendChild(topBtn);
+        const email =
+        document.querySelector(".newsletter-form input");
 
-topBtn.style.position = "fixed";
-topBtn.style.right = "25px";
-topBtn.style.bottom = "25px";
-topBtn.style.width = "50px";
-topBtn.style.height = "50px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.cursor = "pointer";
-topBtn.style.background = "#dcb8b4";
-topBtn.style.color = "white";
-topBtn.style.fontSize = "22px";
-topBtn.style.display = "none";
-topBtn.style.zIndex = "999";
+        if(email.value.trim() === ""){
 
-window.addEventListener("scroll", () => {
+            alert("Ingresa tu correo electrónico");
+
+            return;
+
+        }
+
+        alert("¡Gracias por suscribirte! 💕");
+
+        email.value = "";
+
+    });
+
+}
+
+
+// ==========================
+// BOTÓN SUBIR
+// ==========================
+
+const topButton =
+document.createElement("button");
+
+topButton.innerHTML = "↑";
+
+document.body.appendChild(topButton);
+
+topButton.style.position = "fixed";
+topButton.style.bottom = "25px";
+topButton.style.right = "25px";
+topButton.style.width = "50px";
+topButton.style.height = "50px";
+topButton.style.borderRadius = "50%";
+topButton.style.border = "none";
+topButton.style.cursor = "pointer";
+topButton.style.background = "#B89B84";
+topButton.style.color = "white";
+topButton.style.fontSize = "22px";
+topButton.style.display = "none";
+topButton.style.zIndex = "999";
+
+window.addEventListener("scroll",()=>{
 
     if(window.scrollY > 400){
 
-        topBtn.style.display = "block";
+        topButton.style.display = "block";
 
     }else{
 
-        topBtn.style.display = "none";
+        topButton.style.display = "none";
 
     }
 
 });
 
-topBtn.addEventListener("click", () => {
+topButton.addEventListener("click",()=>{
 
     window.scrollTo({
         top:0,
@@ -107,117 +133,57 @@ topBtn.addEventListener("click", () => {
 });
 
 
-// =========================
-// NEWSLETTER
-// =========================
-
-const subscribeBtn =
-document.querySelector(".newsletter-form button");
-
-if(subscribeBtn){
-
-    subscribeBtn.addEventListener("click", () => {
-
-        const email =
-        document.querySelector(".newsletter-form input");
-
-        if(email.value.trim() === ""){
-
-            alert("Please enter your email.");
-
-            return;
-
-        }
-
-        alert("Thank you for subscribing 💕");
-
-        email.value = "";
-
-    });
-
-}
-
-
-// =========================
-// CARD HOVER EFFECT
-// =========================
+// ==========================
+// HOVER TARJETAS
+// ==========================
 
 document.querySelectorAll(".card").forEach(card=>{
 
     card.addEventListener("mouseenter",()=>{
 
         card.style.transform =
-        "translateY(-10px) scale(1.02)";
+        "translateY(-10px)";
 
     });
 
     card.addEventListener("mouseleave",()=>{
 
         card.style.transform =
-        "translateY(0) scale(1)";
+        "translateY(0)";
 
     });
 
 });
 
 
-// =========================
-// HERO PARALLAX
-// =========================
+// ==========================
+// EFECTO HERO
+// ==========================
 
-window.addEventListener("scroll",()=>{
+const heroButton =
+document.querySelector(".hero button");
 
-    const hero =
-    document.querySelector(".hero");
+if(heroButton){
 
-    let offset = window.pageYOffset;
+    heroButton.addEventListener("click",()=>{
 
-    hero.style.backgroundPositionY =
-    offset * 0.4 + "px";
+        document.querySelector(".products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
-});
-
-
-// =========================
-// TYPE WRITER EFFECT
-// =========================
-
-const title = document.querySelector(".hero h2");
-
-if(title){
-
-    const originalText = title.innerHTML;
-
-    title.innerHTML = "";
-
-    let i = 0;
-
-    function typeWriter(){
-
-        if(i < originalText.length){
-
-            title.innerHTML += originalText.charAt(i);
-
-            i++;
-
-            setTimeout(typeWriter,40);
-
-        }
-
-    }
-
-    setTimeout(typeWriter,500);
+    });
 
 }
 
 
-// =========================
-// CONSOLE SIGNATURE
-// =========================
+// ==========================
+// MENSAJE CONSOLA
+// ==========================
 
 console.log(`
-╔══════════════════════════════╗
-║      LA VIE EN ROSE BLOG     ║
-║       Developed 2026         ║
-╚══════════════════════════════╝
+╔════════════════════════════╗
+║       VELVET FEMME         ║
+║     Ropa y Lencería        ║
+╚════════════════════════════╝
 `);
